@@ -8,8 +8,11 @@
     <string name="back">back</string>
     <string name="back_button">back button</string>
     <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="confirm_enter_password">confirm password</string>
     <string name="enter_password">Enter Password</string>
-    <string name="enter_password_text">Enter Password</string>
+    <string name="enter_cell_phone_number">Enter Cell Phone Number</string>
+    <string name="enter_full_name">Enter Full Name</string>
     <string name="enter_e_mail">Enter e-mail:</string>
     <string name="enter_e_mail_text">Enter e-mail</string>
 </resources>
