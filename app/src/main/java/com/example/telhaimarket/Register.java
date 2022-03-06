@@ -12,14 +12,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowInsets;
 
-import com.example.telhaimarket.databinding.ActivityRegisrerBinding;
+import com.example.telhaimarket.databinding.ActivityRegisterBinding;
 
-
-public class Regisrer extends AppCompatActivity {
+public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
         getSupportActionBar().hide();
 
     }

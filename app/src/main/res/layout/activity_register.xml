@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:theme="@style/ThemeOverlay.Telhaimarket.FullscreenContainer"
-    tools:context=".Login">
+    tools:context=".Register">
 
     <FrameLayout
         android:layout_width="match_parent"

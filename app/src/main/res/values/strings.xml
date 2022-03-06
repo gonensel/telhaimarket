@@ -3,7 +3,7 @@
     <string name="title_activity_login">Login</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_regisrer">Regisrer</string>
+    <string name="title_activity_register">Register</string>
     <string name="title_activity_new_post">NewPost</string>
     <string name="back">back</string>
     <string name="back_button">back button</string>
