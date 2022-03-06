@@ -12,14 +12,14 @@
         <activity
             android:name=".NewPost"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_new_post"
             android:theme="@style/Theme.Telhaimarket.Fullscreen" />
         <activity
-            android:name=".Regisrer"
+            android:name=".Register"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:exported="false"
-            android:label="@string/title_activity_regisrer"
+            android:exported="true"
+            android:label="@string/title_activity_register"
             android:theme="@style/Theme.Telhaimarket.Fullscreen" />
 
         <activity
