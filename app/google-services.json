@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "838863549986",
+    "firebase_url": "https://market-5b2bc-default-rtdb.firebaseio.com",
+    "project_id": "market-5b2bc",
+    "storage_bucket": "market-5b2bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838863549986:android:cc68ab77b8e74b61d87c7b",
+        "android_client_info": {
+          "package_name": "com.example.telhaimarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838863549986-1kkmho9r0h0h23nkhtpbufqkhndtrvic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy9ipYDZDr2uZhFxIbz5fL-c7ez1h2bUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838863549986-1kkmho9r0h0h23nkhtpbufqkhndtrvic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
