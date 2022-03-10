@@ -83,7 +83,7 @@ public class Register extends AppCompatActivity {
                         } else {
                             System.out.println("Gonen3");
                             generateUser(email, auth.getUid(), fullname, phone_number);
-                            startActivity(new Intent(Register.this, Register.class));
+                            startActivity(new Intent(Register.this, Register.class));// TODO go to mainActivity
                             finish();
                         }
                     }
