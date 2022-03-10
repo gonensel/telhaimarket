@@ -15,4 +15,7 @@
     <string name="enter_full_name">Enter Full Name</string>
     <string name="enter_e_mail">Enter e-mail:</string>
     <string name="enter_e_mail_text">Enter e-mail</string>
+    <string name="enter_new_post_title">Enter Post Title</string>
+    <string name="enter_description">Enter Post Description</string>
+    <string name="enter_price">Enter Price</string>
 </resources>
