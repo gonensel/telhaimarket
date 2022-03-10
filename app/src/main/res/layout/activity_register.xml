@@ -92,7 +92,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="190dp"
             android:ems="20"
-            android:inputType="textPhonetic"
+            android:inputType="phone"
             android:minHeight="48dp"
             android:textAlignment="center" />
 
