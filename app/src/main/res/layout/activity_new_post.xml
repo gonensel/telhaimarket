@@ -1,51 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/fullscreenBackgroundColor"
+    android:background="@color/purple_200"
     android:theme="@style/ThemeOverlay.Telhaimarket.FullscreenContainer"
-    tools:context=".NewPost">
+    tools:context=".NewPost" >
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-    <TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="?attr/fullscreenTextColor"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="@style/Widget.Theme.Telhaimarket.ButtonBar.Fullscreen"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/title_new_post_view"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
+            android:layout_gravity="center"
+            android:layout_marginTop="-55dp"
+            android:ems="25"
+            android:text="@string/enter_new_post_title"
+            android:textAlignment="center" />
 
-            <Button
-                android:id="@+id/dummy_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
+        <EditText
+            android:id="@+id/title_new_post_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-20dp"
+            android:ems="20"
+            android:inputType="textPhonetic"
+            android:minHeight="48dp"
+            android:textAlignment="center" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/Dec_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:ems="25"
+            android:text="@string/enter_description"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/editDec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="425dp"
+            android:ems="20"
+            android:maxLines="5"
+            android:maxLength="220"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:textAlignment="textStart" />
+
+        <Button
+            android:id="@+id/new_post_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="310dp"
+            android:backgroundTint="@color/black"
+            android:ems="20"
+            android:text="@string/register"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/new_post_image_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-300dp"
+            android:ems="20"
+            app:srcCompat="@drawable/cultivating" />
+
+        <EditText
+            android:id="@+id/price_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/price_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:ems="25"
+            android:text="@string/enter_price"
+            android:textAlignment="center" />
+
     </FrameLayout>
-
 </FrameLayout>

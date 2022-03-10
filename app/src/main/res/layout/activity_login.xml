@@ -39,7 +39,7 @@
             android:ems="25"
             android:text="@string/enter_password"
             android:textAlignment="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="35dp"
             android:layout_gravity="center" />
 
         <EditText
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="20"
-            android:layout_marginTop="135dp"
+            android:layout_marginTop="140dp"
             android:text="@string/login"
             android:backgroundTint="@color/black"
             android:textAlignment="center"
@@ -68,17 +68,9 @@
             android:id="@+id/login_image_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-320dp"
+            android:layout_marginTop="-340dp"
             android:ems="20"
             app:srcCompat="@drawable/traditional_market" />
-
-        <ImageButton
-            android:id="@+id/login_back_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/back"
-            android:contentDescription="@string/back_button"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
 
     </FrameLayout>
 </FrameLayout>
