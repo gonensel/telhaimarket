@@ -94,6 +94,6 @@ public class Register extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference users = database.getReference("users"); //users is a node in your Firebase Database.
         User user = new User(email, uid, fullname, phone_number); //ObjectClass for Users
-        users.push().setValue(user);
+        users.push().setValue(user);//a
     }
 }
