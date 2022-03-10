@@ -3,12 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.30009775171065495" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_new_post.xml" value="0.13541666666666666" />
-        <entry key="app/src/main/res/layout/activity_regisrer.xml" value="0.13541666666666666" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.34248528751394164" />
-        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/rabin/OneDrive/Documents/GitHub/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/rabin/OneDrive/Documents/GitHub/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/rabin/OneDrive/Documents/GitHub/app/src/main/res/layout/activity_new_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rabin/OneDrive/Documents/GitHub/app/src/main/res/layout/activity_regisrer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/rabin/OneDrive/Documents/GitHub/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

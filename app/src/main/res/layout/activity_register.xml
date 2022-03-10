@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/email_register_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="25"
@@ -23,18 +23,17 @@
             android:layout_gravity="center" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress3"
+            android:id="@+id/email_register_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="20"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
-            android:text="@string/enter_e_mail"
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/password_register_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="25"
@@ -44,7 +43,7 @@
             android:layout_gravity="center" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/password_register_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -52,11 +51,10 @@
             android:ems="20"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:text="@string/enter_password"
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/textViewConfirm"
+            android:id="@+id/re_password_register_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="25"
@@ -66,7 +64,7 @@
             android:layout_gravity="center" />
 
         <EditText
-            android:id="@+id/editTextTextConfirmPassword"
+            android:id="@+id/re_password_register_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -74,7 +72,6 @@
             android:ems="20"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:text="@string/enter_password"
             android:textAlignment="center" />
 
         <TextView
@@ -88,7 +85,7 @@
             android:layout_gravity="center" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/PhoneNumber_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -96,11 +93,10 @@
             android:ems="20"
             android:inputType="textPhonetic"
             android:minHeight="48dp"
-            android:text="@string/enter_cell_phone_number"
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/FullName"
+            android:id="@+id/FullName_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="25"
@@ -118,11 +114,10 @@
             android:ems="20"
             android:inputType="textPhonetic"
             android:minHeight="48dp"
-            android:text="@string/enter_full_name"
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/register_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="20"
@@ -133,7 +128,7 @@
             android:layout_gravity="center" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/register_image_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-320dp"
@@ -141,7 +136,7 @@
             app:srcCompat="@drawable/traditional_market" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/register_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/back"
