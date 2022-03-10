@@ -38,6 +38,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         getSupportActionBar().hide();
         email = (EditText)findViewById(R.id.email_register_edit);
         password = (EditText)findViewById(R.id.password_register_edit);
@@ -90,6 +91,11 @@ public class Register extends AppCompatActivity {
                 });
     }
     private void generateUser(String email,String uid,String fullname,String phone_number) {
+
+        getSupportActionBar().setTitle("Register");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference users = database.getReference("users"); //users is a node in your Firebase Database.
