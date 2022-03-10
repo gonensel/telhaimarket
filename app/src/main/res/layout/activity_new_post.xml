@@ -71,7 +71,7 @@
             android:id="@+id/new_post_image_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-295dp"
+            android:layout_marginTop="-300dp"
             android:ems="20"
             app:srcCompat="@drawable/cultivating" />
 
