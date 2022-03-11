@@ -39,6 +39,8 @@
     <string name="create_post">create post</string>
     <string name="my_posts">my posts</string>
     <string name="log_out">log out</string>
+    <string name="Edit_btn">edit</string>
+    <string name="title_activity_edit_post">Edit</string>
 
 
 </resources>
