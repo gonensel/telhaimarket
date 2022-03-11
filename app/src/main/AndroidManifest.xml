@@ -18,7 +18,7 @@
             android:name=".ProfilePage"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:label="@string/title_activity_new_post"
+            android:label="@string/title_activity_profile_page"
             android:theme="@style/Theme.Telhaimarket.Fullscreen" />
         <activity
             android:name=".NewPost"
@@ -26,6 +26,12 @@
             android:exported="true"
             android:label="@string/title_activity_new_post"
             android:theme="@style/Theme.Telhaimarket.Fullscreen" />
+        <activity
+        android:name=".ProfileEditPage"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:exported="true"
+        android:label="@string/title_activity_edit_post"
+        android:theme="@style/Theme.Telhaimarket.Fullscreen" />
         <activity
             android:name=".Register"
             android:configChanges="orientation|keyboardHidden|screenSize"
