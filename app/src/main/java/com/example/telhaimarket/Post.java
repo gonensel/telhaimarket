@@ -4,9 +4,9 @@ public class Post {
     private String description;
     private String title;
     private String ownerUid;
-    private Number price;
+    private String price;
 
-    public Post(String description, String title, Number price, String ownerUid) {
+    public Post(String description, String title, String price, String ownerUid) {
         this.description = description;
         this.title = title;
         this.price = price;
@@ -29,11 +29,11 @@ public class Post {
         this.title = title;
     }
 
-    public Number getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Number price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

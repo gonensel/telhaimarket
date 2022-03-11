@@ -100,7 +100,7 @@ public class Login extends AppCompatActivity {
 
 
                             // Opening the UserProfileActivity.
-                            Intent intent = new Intent(Login.this, Login.class);
+                            Intent intent = new Intent(Login.this, NewPost.class);
                             startActivity(intent);
                         }
                         else {
