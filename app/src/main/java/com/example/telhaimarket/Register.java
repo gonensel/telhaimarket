@@ -84,7 +84,7 @@ public class Register extends AppCompatActivity {
                         } else {
                             System.out.println("Gonen3");
                             generateUser(email, auth.getUid(), fullname, phone_number);
-                            startActivity(new Intent(Register.this, Register.class));// TODO go to mainActivity
+                            startActivity(new Intent(Register.this, Login.class));// TODO go to mainActivity
                             finish();
                         }
                     }
@@ -100,6 +100,6 @@ public class Register extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference users = database.getReference("users"); //users is a node in your Firebase Database.
         User user = new User(email, uid, fullname, phone_number); //ObjectClass for Users
-        users.push().setValue(user);//a
+        users.push().setValue(user);
     }
 }

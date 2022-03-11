@@ -11,11 +11,14 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowInsets;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.telhaimarket.databinding.ActivityNewPostBinding;
 
 public class NewPost extends AppCompatActivity {
-
+    EditText title, dec, price;
+    Button share;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
