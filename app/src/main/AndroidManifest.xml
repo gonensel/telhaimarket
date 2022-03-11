@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="com.example.telhaimarket" >
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,8 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Telhaimarket"
-
         android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".ProfileEditPage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_profile_page"
+            android:theme="@style/Theme.Telhaimarket.Fullscreen" />
         <activity
             android:name=".ProfilePage"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -26,12 +30,6 @@
             android:exported="true"
             android:label="@string/title_activity_new_post"
             android:theme="@style/Theme.Telhaimarket.Fullscreen" />
-        <activity
-        android:name=".ProfileEditPage"
-        android:configChanges="orientation|keyboardHidden|screenSize"
-        android:exported="true"
-        android:label="@string/title_activity_edit_post"
-        android:theme="@style/Theme.Telhaimarket.Fullscreen" />
         <activity
             android:name=".Register"
             android:configChanges="orientation|keyboardHidden|screenSize"
