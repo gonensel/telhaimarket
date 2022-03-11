@@ -41,6 +41,7 @@
     <string name="log_out">log out</string>
     <string name="Edit_btn">edit</string>
     <string name="title_activity_edit_post">Edit</string>
+    <string name="update_information">update information</string>
 
 
 </resources>
