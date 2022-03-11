@@ -29,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Register extends AppCompatActivity {
     private EditText email;
     private EditText password;
+    private EditText passwordver;
     private Button register;
     private EditText fullname;
     private EditText  phone_number;
@@ -43,6 +44,7 @@ public class Register extends AppCompatActivity {
 
         email = (EditText)findViewById(R.id.email_register_edit);
         password = (EditText)findViewById(R.id.password_register_edit);
+        passwordver = (EditText)findViewById(R.id.re_password_register_edit);
         fullname = (EditText)findViewById(R.id.editFullName);
         phone_number = (EditText)findViewById(R.id.PhoneNumber_edit);
         register=(Button)findViewById(R.id.register_button);
@@ -56,11 +58,16 @@ public class Register extends AppCompatActivity {
                 String txt_password = password.getText().toString();
                 String txt_fullname = fullname.getText().toString();
                 String txt_phone_number = phone_number.getText().toString();
+                String txt_passwordVer = passwordver.getText().toString();
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)|| TextUtils.isEmpty(txt_fullname)|| TextUtils.isEmpty(txt_phone_number)){
-                    Toast.makeText(Register.this, "Empty",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "Some fields are empty",Toast.LENGTH_SHORT).show();
                 }else if(txt_password.length() < 6 ) {
-                    Toast.makeText(Register.this, "Too short", Toast.LENGTH_SHORT).show();
-                }else{
+                    Toast.makeText(Register.this, "Password is too short", Toast.LENGTH_SHORT).show();
+                }
+                else if (!txt_password.equals(txt_passwordVer)){
+                    Toast.makeText(Register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     registerUser(txt_email,txt_password,txt_fullname,txt_phone_number);
 
                 }
@@ -98,6 +105,6 @@ public class Register extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference users = database.getReference("users"); //users is a node in your Firebase Database.
         User user = new User(email, uid, fullname, phone_number); //ObjectClass for Users
-        users.push().setValue(user);
+        users.child(uid).setValue(user);
     }
 }

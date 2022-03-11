@@ -71,7 +71,9 @@ public class NewPost extends AppCompatActivity {
         Post post = new Post(dec,title,price,auth.getUid());
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference posts = database.getReference("posts"); //users is a node in your Firebase Database.
-        posts.push().setValue(post).addOnCompleteListener(NewPost.this, new OnCompleteListener<Void>() {
+        DatabaseReference rf = posts.push();
+        post.setKeyNode(rf.getKey());
+        rf.setValue(post).addOnCompleteListener(NewPost.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 Toast.makeText(NewPost.this, "publish new post" , Toast.LENGTH_SHORT).show();
@@ -80,7 +82,7 @@ public class NewPost extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    startActivity(new Intent(NewPost.this, NewPost.class));// TODO go to mainActivity
+                    startActivity(new Intent(NewPost.this, ProfilePage.class));// TODO go to mainActivity
 //                    posts.addValueEventListener(new ValueEventListener() {
 //                        @Override
 //                        public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -1,6 +1,7 @@
 package com.example.telhaimarket;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -29,7 +30,7 @@ public class ProfilePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
-
+        loggedIn = false;
         getSupportActionBar().setTitle("Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -47,8 +48,6 @@ public class ProfilePage extends AppCompatActivity {
 
         }
         else {
-//            login.setVisibility(View.GONE);
-//            register.setLayoutDirection(login.getLayoutDirection());
             loggedIn = true;
             FirebaseUser user = auth.getCurrentUser();
             FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -105,7 +104,7 @@ public class ProfilePage extends AppCompatActivity {
 
                 }
                 else {
-                    startActivity(new Intent(ProfilePage.this, Login.class));
+                    startActivity(new Intent(ProfilePage.this, ProfileEditPage.class));
                     finish();
 
                 }

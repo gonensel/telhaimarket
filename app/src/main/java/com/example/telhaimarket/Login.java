@@ -52,15 +52,15 @@ public class Login extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         // Checking if user already logged in before and not logged out properly.
-//        if(firebaseAuth.getCurrentUser() != null){
-//
-//            // Finishing current Login Activity.
-//            finish();
-//
-//            // Opening UserProfileActivity .
-//            Intent intent = new Intent(Login.this, Login.class);TODO go to mainActiviti
-//            startActivity(intent);
-//        }
+        if(firebaseAuth.getCurrentUser() != null){
+
+            // Finishing current Login Activity.
+            finish();
+
+            // Opening UserProfileActivity .
+            Intent intent = new Intent(Login.this, ProfilePage.class);//TODO go to mainActiviti
+            startActivity(intent);
+        }
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,7 +99,7 @@ public class Login extends AppCompatActivity {
 
 
                             // Opening the UserProfileActivity.
-                            Intent intent = new Intent(Login.this, NewPost.class);
+                            Intent intent = new Intent(Login.this, ProfilePage.class);
                             startActivity(intent);
                         }
                         else {
