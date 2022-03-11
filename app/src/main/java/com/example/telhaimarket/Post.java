@@ -12,6 +12,7 @@ public class Post {
         this.price = price;
         this.ownerUid = ownerUid;
     }
+    public Post(){}
 
     public String getDescription() {
         return description;

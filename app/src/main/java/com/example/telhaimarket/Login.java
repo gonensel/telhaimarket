@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity {
 //            finish();
 //
 //            // Opening UserProfileActivity .
-//            Intent intent = new Intent(Login.this, Login.class);
+//            Intent intent = new Intent(Login.this, Login.class);TODO go to mainActiviti
 //            startActivity(intent);
 //        }
         login.setOnClickListener(new View.OnClickListener() {
