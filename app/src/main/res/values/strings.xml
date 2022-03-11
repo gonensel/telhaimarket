@@ -9,8 +9,11 @@
     <string name="back_button">back button</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
-    <string name="confirm_enter_password">confirm password</string>
+    <string name="confirm_enter_password">Confirm password</string>
     <string name="enter_password">Enter Password</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="edit_phone_number">Edit phone number</string>
+    <string name="edit_Full_name">Edit full name</string>
     <string name="enter_cell_phone_number">Enter Cell Phone Number</string>
     <string name="enter_full_name">Enter Full Name</string>
     <string name="enter_e_mail">Enter e-mail:</string>
@@ -19,6 +22,7 @@
     <string name="enter_description">Enter Post Description</string>
     <string name="enter_price">Enter Price</string>
     <string name="publish">publish</string>
+
     <string name="title_activity_profile_page">profile_page</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -35,5 +39,6 @@
     <string name="create_post">create post</string>
     <string name="my_posts">my posts</string>
     <string name="log_out">log out</string>
+
 
 </resources>
