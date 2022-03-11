@@ -18,4 +18,6 @@
     <string name="enter_new_post_title">Enter Post Title</string>
     <string name="enter_description">Enter Post Description</string>
     <string name="enter_price">Enter Price</string>
+    <string name="publish">publish</string>
+
 </resources>

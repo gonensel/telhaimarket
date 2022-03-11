@@ -51,12 +51,11 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                System.out.println("Gonen1");
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
                 String txt_fullname = fullname.getText().toString();
                 String txt_phone_number = phone_number.getText().toString();
-                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
+                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)|| TextUtils.isEmpty(txt_fullname)|| TextUtils.isEmpty(txt_phone_number)){
                     Toast.makeText(Register.this, "Empty",Toast.LENGTH_SHORT).show();
                 }else if(txt_password.length() < 6 ) {
                     Toast.makeText(Register.this, "Too short", Toast.LENGTH_SHORT).show();
@@ -75,16 +74,14 @@ public class Register extends AppCompatActivity {
                 .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(Register.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, "Create user is succeeded:", Toast.LENGTH_SHORT).show();
 
                         if (!task.isSuccessful()) {
                             Toast.makeText(Register.this, "Authentication failed." + task.getException(),
                                     Toast.LENGTH_SHORT).show();
-                            System.out.println("Gonen2");
                         } else {
-                            System.out.println("Gonen3");
                             generateUser(email, auth.getUid(), fullname, phone_number);
-                            startActivity(new Intent(Register.this, Register.class));// TODO go to mainActivity
+                            startActivity(new Intent(Register.this, Login.class));// TODO go to mainActivity
                             finish();
                         }
                     }
