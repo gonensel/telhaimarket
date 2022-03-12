@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/post_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/post_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="description"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:textAlignment="textStart"
+                android:maxLines="5"
+                android:lines="5"
+                android:textSize="20sp"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/post_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="price"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/post_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="full name"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/post_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="cell phone number"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
