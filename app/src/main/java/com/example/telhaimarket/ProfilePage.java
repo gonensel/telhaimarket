@@ -43,7 +43,7 @@ public class ProfilePage extends AppCompatActivity {
         creatPost = (Button)findViewById(R.id.create_post_page_button);
         myPosts = (Button)findViewById(R.id.my_posts_page_button);
         auth = FirebaseAuth.getInstance();
-        if (auth == null){
+        if (auth.getCurrentUser() == null){
             loggedIn = false;
             welcome.setText("Welcome Guest");
         }

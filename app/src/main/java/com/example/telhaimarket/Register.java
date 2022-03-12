@@ -72,10 +72,13 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else{
-                    registerUser(txt_email,txt_password,txt_fullname,txt_phone_number);
-
+                if (txt_phone_number.length() != 10){
+                    Toast.makeText(Register.this, "Phone number is too short", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                registerUser(txt_email,txt_password,txt_fullname,txt_phone_number);
+
             }
         });
 
@@ -92,9 +95,10 @@ public class Register extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(Register.this, "Authentication failed." + task.getException(),
                                     Toast.LENGTH_SHORT).show();
-                        } else {
+                        }
+                        else {
                             generateUser(email, auth.getUid(), fullname, phone_number);
-                            startActivity(new Intent(Register.this, Login.class));// TODO go to mainActivity
+                            startActivity(new Intent(Register.this, MainActivity.class));
                         }
                     }
                 });

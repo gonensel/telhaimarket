@@ -94,6 +94,10 @@ public class ProfileEditPage extends AppCompatActivity {
                     return;
 
                 }
+                if (txt_phone_number.length() != 10){
+                    Toast.makeText(ProfileEditPage.this, "Phone number is too short", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 else {
                     temp.setFullName(txt_fullname);
                     temp.setPhoneNumber(txt_phone_number);
@@ -105,7 +109,6 @@ public class ProfileEditPage extends AppCompatActivity {
                     temp.setUid(auth.getUid());
                     userRf.child(auth.getUid()).setValue(temp);
                     startActivity(new Intent(ProfileEditPage.this, ProfilePage.class));
-//                    finish();
                 }
 
             }

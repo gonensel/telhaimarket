@@ -55,6 +55,7 @@ public class NewPost extends AppCompatActivity {
                 String txt_price = price.getText().toString();
                 if (TextUtils.isEmpty(txt_title) || TextUtils.isEmpty(txt_dec) || TextUtils.isEmpty(txt_price)){
                     Toast.makeText(NewPost.this, "Some fields are empty please fill all",Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else {
                     publish(txt_dec, txt_title, txt_price);
