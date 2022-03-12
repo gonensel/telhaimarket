@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                                     User temp = postsnap.getValue(User.class);
                                     if (temp.getUid().equals(model.getOwnerUid())){
                                         holder.setFullName(temp.getFullName());
-
                                         holder.setPhoneNumber(temp.getPhoneNumber());
                                     }
                                 }
