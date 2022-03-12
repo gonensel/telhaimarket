@@ -31,7 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
     // Creating EditText.
     EditText email, password ;
-    Button login;
+    Button login,resetPass;
     // Creating FirebaseAuth object.
     FirebaseAuth firebaseAuth;
     @Override

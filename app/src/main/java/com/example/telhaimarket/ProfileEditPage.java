@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -108,6 +109,9 @@ public class ProfileEditPage extends AppCompatActivity {
                     temp.setEmail(auth.getCurrentUser().getEmail());
                     temp.setUid(auth.getUid());
                     userRf.child(auth.getUid()).setValue(temp);
+                    FirebaseUser firebaseUser = auth.getCurrentUser();
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(txt_fullname).build();
+                    firebaseUser.updateProfile(profileUpdates);
                     startActivity(new Intent(ProfileEditPage.this, ProfilePage.class));
                 }
 

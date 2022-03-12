@@ -24,6 +24,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -98,7 +100,11 @@ public class Register extends AppCompatActivity {
                         }
                         else {
                             generateUser(email, auth.getUid(), fullname, phone_number);
+                            FirebaseUser user = auth.getCurrentUser();
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(fullname).build();
+                            user.updateProfile(profileUpdates);
                             startActivity(new Intent(Register.this, MainActivity.class));
+                            finish();
                         }
                     }
                 });
