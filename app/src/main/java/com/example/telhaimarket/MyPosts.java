@@ -65,7 +65,7 @@ public class MyPosts extends AppCompatActivity {
             protected void onBindViewHolder(MainActivity.PostHolder holder, int position, Post model) {
                 holder.setTitle(model.getTitle());
                 holder.setDescription(model.getDescription());
-                holder.setPrice(model.getPrice());
+                holder.setPrice(model.getPrice()+"$");
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference userRf =  database.getReference("users");
                 userRf.addValueEventListener(new ValueEventListener() {
