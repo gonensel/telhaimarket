@@ -17,7 +17,7 @@ public class User {
 
     public User(String email, String uid, String fullName, String phoneNumber)
     {
-        this.email = email; //Parameterized for Program-Inhouse objects.
+        this.email = email;
         this.uid = uid;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
@@ -65,6 +65,7 @@ public class User {
     public void setKeyNode(String keyNode) {
         this.keyNode = keyNode;
     }
+
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);

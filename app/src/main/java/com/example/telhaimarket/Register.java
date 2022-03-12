@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowInsets;
@@ -61,11 +62,14 @@ public class Register extends AppCompatActivity {
                 String txt_passwordVer = passwordver.getText().toString();
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)|| TextUtils.isEmpty(txt_fullname)|| TextUtils.isEmpty(txt_phone_number)){
                     Toast.makeText(Register.this, "Some fields are empty",Toast.LENGTH_SHORT).show();
+                    return;
                 }else if(txt_password.length() < 6 ) {
                     Toast.makeText(Register.this, "Password is too short", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else if (!txt_password.equals(txt_passwordVer)){
                     Toast.makeText(Register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else{
                     registerUser(txt_email,txt_password,txt_fullname,txt_phone_number);
@@ -90,7 +94,7 @@ public class Register extends AppCompatActivity {
                         } else {
                             generateUser(email, auth.getUid(), fullname, phone_number);
                             startActivity(new Intent(Register.this, Login.class));// TODO go to mainActivity
-                            finish();
+//                            finish();
                         }
                     }
                 });
@@ -106,5 +110,14 @@ public class Register extends AppCompatActivity {
         DatabaseReference users = database.getReference("users"); //users is a node in your Firebase Database.
         User user = new User(email, uid, fullname, phone_number); //ObjectClass for Users
         users.child(uid).setValue(user);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
