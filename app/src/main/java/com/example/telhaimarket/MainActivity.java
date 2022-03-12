@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -69,10 +70,13 @@ public class MainActivity extends AppCompatActivity {
                     @NonNull
                     @Override
                     public PostHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        return null;
+                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_post_layout, parent, false);
+                        PostHolder viewHolder = new PostHolder(view);
+                        return viewHolder;
                     }
                 };
         posts_feed.setAdapter(fra);
+        fra.startListening();
     }
 
     public static class PostHolder extends RecyclerView.ViewHolder{
