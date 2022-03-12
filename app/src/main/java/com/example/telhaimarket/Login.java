@@ -1,28 +1,19 @@
 package com.example.telhaimarket;
 
-import android.annotation.SuppressLint;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowInsets;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 
-import com.example.telhaimarket.databinding.ActivityLoginBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -46,6 +37,7 @@ public class Login extends AppCompatActivity {
         email = (EditText)findViewById(R.id.email_login_edit);
         password = (EditText)findViewById(R.id.password_login_edit);
         login = (Button)findViewById(R.id.login_button);
+        resetPass = (Button)findViewById(R.id.resetPass);
         firebaseAuth = FirebaseAuth.getInstance();
 
         // Checking if user already logged in before and not logged out properly.
@@ -72,6 +64,13 @@ public class Login extends AppCompatActivity {
                     LoginFunction(txt_email, txt_password);
 
                 }
+            }
+        });
+        resetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, ResetPassword.class);
+                startActivity(intent);
             }
         });
 
