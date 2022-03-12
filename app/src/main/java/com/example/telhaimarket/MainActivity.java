@@ -157,5 +157,6 @@ public class MainActivity extends AppCompatActivity {
             TextView new_phone_number = (TextView) tempView.findViewById(R.id.post_phone);
             new_phone_number.setText(phone_number);
         }
+
     }
 }
