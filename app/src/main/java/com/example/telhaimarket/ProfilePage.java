@@ -120,7 +120,7 @@ public class ProfilePage extends AppCompatActivity {
 
                 }
                 else {
-                    startActivity(new Intent(ProfilePage.this, Login.class));
+                    startActivity(new Intent(ProfilePage.this, MyPosts.class));
                 }
             }
         });
@@ -132,7 +132,7 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     auth.signOut();
-                    startActivity(new Intent(ProfilePage.this, Login.class));
+                    startActivity(new Intent(ProfilePage.this, MainActivity.class));
                     finish();
 
                 }
