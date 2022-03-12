@@ -14,13 +14,13 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MyPosts"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Search"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ResetPassword"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ProfileEditPage"
             android:configChanges="orientation|keyboardHidden|screenSize"
