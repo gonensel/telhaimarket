@@ -71,7 +71,7 @@ public class NewPost extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         Post post = new Post(dec,title,price,auth.getUid());
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference posts = database.getReference("posts"); //users is a node in your Firebase Database.
+        DatabaseReference posts = database.getReference("posts"); //users is a node in Firebase Database.
         DatabaseReference rf = posts.push();
         post.setKeyNode(rf.getKey());
         rf.setValue(post).addOnCompleteListener(NewPost.this, new OnCompleteListener<Void>() {
@@ -83,7 +83,7 @@ public class NewPost extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    startActivity(new Intent(NewPost.this, ProfilePage.class));// TODO go to mainActivity
+                    startActivity(new Intent(NewPost.this, MainActivity.class));
 //                    posts.addValueEventListener(new ValueEventListener() {
 //                        @Override
 //                        public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -93,9 +93,6 @@ public class NewPost extends AppCompatActivity {
 //
 //                                Post post = postsnap.getValue(Post.class);
 //                                lst.add(post) ;
-//
-//
-//
 //                            }
 //                            System.out.println(lst.get(0).getDescription());
 //                        }
@@ -109,8 +106,6 @@ public class NewPost extends AppCompatActivity {
                 }
             }
         });
-
-
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

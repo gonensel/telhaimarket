@@ -27,10 +27,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 public class Login extends AppCompatActivity {
     // Creating EditText.
     EditText email, password ;
@@ -58,7 +54,7 @@ public class Login extends AppCompatActivity {
             finish();
 
             // Opening UserProfileActivity .
-            Intent intent = new Intent(Login.this, ProfilePage.class);//TODO go to mainActiviti
+            Intent intent = new Intent(Login.this, MainActivity.class);
             startActivity(intent);
         }
         login.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +64,7 @@ public class Login extends AppCompatActivity {
                 String txt_password = password.getText().toString();
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(Login.this, "Please Fill All the Fields", Toast.LENGTH_LONG).show();
+                    return;
 
                 }
                 else {
@@ -77,12 +74,9 @@ public class Login extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void LoginFunction(String email, String password){
-
-
         // Calling  signInWithEmailAndPassword function with firebase object and passing EmailHolder and PasswordHolder inside it.
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -92,23 +86,18 @@ public class Login extends AppCompatActivity {
                         // If task done Successful.
                         Dialog progressDialog;
                         if(task.isSuccessful()){
-
-
                             // Closing the current Login Activity.
+                            // Opening the UserProfileActivity.
+                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            startActivity(intent);
                             finish();
 
-
-                            // Opening the UserProfileActivity.
-                            Intent intent = new Intent(Login.this, ProfilePage.class);
-                            startActivity(intent);
                         }
                         else {
-
                             // Showing toast message when email or password not found in Firebase Online database.
                             Toast.makeText(Login.this, "Email or Password Not found, Please Try Again", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
-
     }
 }

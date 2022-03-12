@@ -83,12 +83,13 @@ public class ProfileEditPage extends AppCompatActivity {
                 if (TextUtils.isEmpty(txt_password)|| TextUtils.isEmpty(txt_fullname)|| TextUtils.isEmpty(txt_phone_number)){
                     Toast.makeText(ProfileEditPage.this, "Some fields are empty ",Toast.LENGTH_SHORT).show();
                     return;
-                }else if(txt_password.length() < 6 ) {
+                }
+                if(txt_password.length() < 6 ) {
                     Toast.makeText(ProfileEditPage.this, "Password is too short", Toast.LENGTH_SHORT).show();
                     return;
 
                 }
-                else if (!txt_password.equals(txt_passwordVer)){
+                if (!txt_password.equals(txt_passwordVer)){
                     Toast.makeText(ProfileEditPage.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
 

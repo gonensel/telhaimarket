@@ -46,7 +46,6 @@ public class ProfilePage extends AppCompatActivity {
         if (auth == null){
             loggedIn = false;
             welcome.setText("Welcome Guest");
-
         }
         else {
             loggedIn = true;
@@ -73,12 +72,9 @@ public class ProfilePage extends AppCompatActivity {
             public void onClick(View view) {
                 if(loggedIn){
                     Toast.makeText(ProfilePage.this, "You all ready logged in",Toast.LENGTH_SHORT).show();
-
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, Login.class));
-//                    finish();
-
                 }
             }
 
@@ -88,12 +84,9 @@ public class ProfilePage extends AppCompatActivity {
             public void onClick(View view) {
                 if(loggedIn){
                     Toast.makeText(ProfilePage.this, "You all ready logged in",Toast.LENGTH_SHORT).show();
-
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, Register.class));
-//                    finish();
-
                 }
             }
         });
@@ -106,8 +99,6 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, ProfileEditPage.class));
-//                    finish();
-
                 }
             }
         });
@@ -116,12 +107,9 @@ public class ProfilePage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!loggedIn){
                     Toast.makeText(ProfilePage.this, "You are not logged in",Toast.LENGTH_SHORT).show();
-
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, NewPost.class));
-//                    finish();
-
                 }
             }
         });
@@ -134,8 +122,6 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, Login.class));
-//                    finish();
-
                 }
             }
         });
@@ -144,12 +130,11 @@ public class ProfilePage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!loggedIn){
                     Toast.makeText(ProfilePage.this, "You are not logged in",Toast.LENGTH_SHORT).show();
-
                 }
                 else {
                     auth.signOut();
                     startActivity(new Intent(ProfilePage.this, Login.class));
-//                    finish();
+                    finish();
 
                 }
             }
