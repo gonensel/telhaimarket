@@ -45,5 +45,7 @@
     <string name="reset_password">reset password</string>
 
 
+    <string name="send_reset_email">Send reset e-mail</string>
+
 
 </resources>
