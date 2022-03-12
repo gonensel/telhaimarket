@@ -1,15 +1,11 @@
 package com.example.telhaimarket;
 
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView posts_feed;
     private DatabaseReference PostsRef;
     private FirebaseAuth auth;
+    private ImageButton goToProfileBTN, goToSearchBTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +53,24 @@ public class MainActivity extends AppCompatActivity {
                 if (auth.getCurrentUser() == null){
                     startActivity(new Intent(MainActivity.this, ProfilePage.class));
                 }
+                else
                 startActivity(new Intent(MainActivity.this, NewPost.class));
+
+            }
+        });
+        goToProfileBTN = (ImageButton) findViewById(R.id.ProfileBTN);
+        goToSearchBTN = (ImageButton)findViewById(R.id.SearchBTN);
+        goToProfileBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ProfilePage.class));
+
+            }
+        });
+        goToSearchBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Search.class));
 
             }
         });
@@ -143,5 +157,6 @@ public class MainActivity extends AppCompatActivity {
             TextView new_phone_number = (TextView) tempView.findViewById(R.id.post_phone);
             new_phone_number.setText(phone_number);
         }
+
     }
 }
