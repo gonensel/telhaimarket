@@ -60,11 +60,23 @@ public class MainActivity extends AppCompatActivity {
                         holder.setDescription(model.getDescription());
                         holder.setPrice(model.getPrice());
 
-                        FirebaseAuth auth = FirebaseAuth.getInstance();
-                        FirebaseUser firebaseUser = auth.getCurrentUser();
-                        holder.setFullName(firebaseUser.getDisplayName());
-
-                        holder.setPhoneNumber(firebaseUser.getPhoneNumber());
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference userRf =  database.getReference("users");
+                        userRf.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                DataSnapshot dataSnapshot;
+                                for (DataSnapshot postsnap: snapshot.getChildren()) {
+                                    User temp = postsnap.getValue(User.class);
+                                    if (temp.getUid().equals(model.getOwnerUid())){
+                                        holder.setFullName(temp.getFullName());
+                                        holder.setPhoneNumber(temp.getPhoneNumber());
+                                    }
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) { }
+                        });
                     }
 
                     @NonNull
