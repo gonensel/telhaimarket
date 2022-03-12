@@ -24,6 +24,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -63,18 +65,22 @@ public class Register extends AppCompatActivity {
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)|| TextUtils.isEmpty(txt_fullname)|| TextUtils.isEmpty(txt_phone_number)){
                     Toast.makeText(Register.this, "Some fields are empty",Toast.LENGTH_SHORT).show();
                     return;
-                }else if(txt_password.length() < 6 ) {
+                }
+                if(txt_password.length() < 6 ) {
                     Toast.makeText(Register.this, "Password is too short", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if (!txt_password.equals(txt_passwordVer)){
+                if (!txt_password.equals(txt_passwordVer)){
                     Toast.makeText(Register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else{
-                    registerUser(txt_email,txt_password,txt_fullname,txt_phone_number);
-
+                if (txt_phone_number.length() != 10){
+                    Toast.makeText(Register.this, "Phone number is too short", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                registerUser(txt_email,txt_password,txt_fullname,txt_phone_number);
+
             }
         });
 
@@ -91,10 +97,14 @@ public class Register extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(Register.this, "Authentication failed." + task.getException(),
                                     Toast.LENGTH_SHORT).show();
-                        } else {
+                        }
+                        else {
                             generateUser(email, auth.getUid(), fullname, phone_number);
-                            startActivity(new Intent(Register.this, Login.class));// TODO go to mainActivity
-//                            finish();
+                            FirebaseUser user = auth.getCurrentUser();
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(fullname).build();
+                            user.updateProfile(profileUpdates);
+                            startActivity(new Intent(Register.this, MainActivity.class));
+                            finish();
                         }
                     }
                 });
@@ -104,8 +114,6 @@ public class Register extends AppCompatActivity {
         getSupportActionBar().setTitle("Register");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference users = database.getReference("users"); //users is a node in your Firebase Database.
         User user = new User(email, uid, fullname, phone_number); //ObjectClass for Users
