@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,6 @@ import java.util.HashMap;
 public class ProfileEditPage extends AppCompatActivity {
     private EditText password;
     private EditText passwordver;
-    private Button register;
     private EditText fullname;
     private EditText  phone_number;
     Button updateInfo;
@@ -45,6 +45,7 @@ public class ProfileEditPage extends AppCompatActivity {
         fullname = (EditText)findViewById(R.id.FullName_editpage_edit);
         phone_number = (EditText)findViewById(R.id.editPhoneNumber_editpage);
         updateInfo = (Button)findViewById(R.id.update_editpage_button);
+        //to pull user data from db
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -103,7 +104,7 @@ public class ProfileEditPage extends AppCompatActivity {
                     temp.setUid(auth.getUid());
                     userRf.child(auth.getUid()).setValue(temp);
                     startActivity(new Intent(ProfileEditPage.this, ProfilePage.class));
-                    finish();
+//                    finish();
                 }
 
             }
@@ -128,5 +129,14 @@ public class ProfileEditPage extends AppCompatActivity {
             }
         });
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -76,7 +77,7 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, Login.class));
-                    finish();
+//                    finish();
 
                 }
             }
@@ -91,7 +92,7 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, Register.class));
-                    finish();
+//                    finish();
 
                 }
             }
@@ -105,7 +106,7 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, ProfileEditPage.class));
-                    finish();
+//                    finish();
 
                 }
             }
@@ -119,7 +120,7 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, NewPost.class));
-                    finish();
+//                    finish();
 
                 }
             }
@@ -133,7 +134,7 @@ public class ProfilePage extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(ProfilePage.this, Login.class));
-                    finish();
+//                    finish();
 
                 }
             }
@@ -148,10 +149,19 @@ public class ProfilePage extends AppCompatActivity {
                 else {
                     auth.signOut();
                     startActivity(new Intent(ProfilePage.this, Login.class));
-                    finish();
+//                    finish();
 
                 }
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

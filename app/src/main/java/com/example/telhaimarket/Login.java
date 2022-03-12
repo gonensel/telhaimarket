@@ -80,7 +80,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-    public void LoginFunction(String email, String password){
+    private void LoginFunction(String email, String password){
 
 
         // Calling  signInWithEmailAndPassword function with firebase object and passing EmailHolder and PasswordHolder inside it.
