@@ -1,9 +1,13 @@
 package com.example.telhaimarket;
 
 import android.content.Intent;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -25,7 +29,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     private FloatingActionButton addNewPost;
-    private MenuItem menuItem;
     private RecyclerView posts_feed;
     private DatabaseReference PostsRef;
     private FirebaseAuth auth;
