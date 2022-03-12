@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.cert.PolicyNode;
 import java.util.HashMap;
 
 public class ProfileEditPage extends AppCompatActivity {
@@ -44,6 +45,27 @@ public class ProfileEditPage extends AppCompatActivity {
         fullname = (EditText)findViewById(R.id.FullName_editpage_edit);
         phone_number = (EditText)findViewById(R.id.editPhoneNumber_editpage);
         updateInfo = (Button)findViewById(R.id.update_editpage_button);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRf =  database.getReference("users");
+        temp = new User();
+        userRf.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                DataSnapshot dataSnapshot;
+                for (DataSnapshot postsnap: snapshot.getChildren()) {
+                    User tempy = postsnap.getValue(User.class);
+                    if (tempy.getUid().equals(auth.getUid())){
+                        temp = new User(tempy.getEmail(),tempy.getUid(),tempy.getFullName(),tempy.getPhoneNumber());
+                        fullname.setText(temp.getFullName());
+                        phone_number.setText(temp.getPhoneNumber());
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) { }
+        });
         updateInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +77,8 @@ public class ProfileEditPage extends AppCompatActivity {
                 String txt_fullname = fullname.getText().toString();
                 String txt_phone_number = phone_number.getText().toString();
                 String txt_passwordVer = passwordver.getText().toString();
-                temp = new User();
+
+
                 if (TextUtils.isEmpty(txt_password)|| TextUtils.isEmpty(txt_fullname)|| TextUtils.isEmpty(txt_phone_number)){
                     Toast.makeText(ProfileEditPage.this, "Some fields are empty ",Toast.LENGTH_SHORT).show();
                     return;
