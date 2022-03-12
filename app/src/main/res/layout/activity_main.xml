@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+<<<<<<< Updated upstream
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -19,5 +20,48 @@
         app:srcCompat="@drawable/market_logo"
         tools:layout_editor_absoluteX="4dp"
         tools:ignore="MissingConstraints" />
+=======
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="115dp">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginRight="0dp"
+            android:background="@android:color/darker_gray"
+            app:fabCradleMargin="0dp"
+            app:fabCradleRoundedCornerRadius="0dp"
+            app:fabCradleVerticalOffset="10dp">
+
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                app:menu="@menu/nav_menu"
+
+                />
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:tint="@android:color/darker_gray"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            app:layout_anchor="@id/bottomAppBar"
+            app:srcCompat="@drawable/add" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+>>>>>>> Stashed changes
 
 </androidx.constraintlayout.widget.ConstraintLayout>
