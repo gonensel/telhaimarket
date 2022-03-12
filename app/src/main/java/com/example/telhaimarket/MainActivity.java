@@ -1,24 +1,22 @@
 package com.example.telhaimarket;
 
-import androidx.annotation.DrawableRes;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,9 +24,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-
+    private FloatingActionButton addNewPost;
+    private MenuItem menuItem;
     private RecyclerView posts_feed;
     private DatabaseReference PostsRef;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +42,21 @@ public class MainActivity extends AppCompatActivity {
         llm.setReverseLayout(true);
         llm.setStackFromEnd(true);
         posts_feed.setLayoutManager(llm);
-
+        auth = FirebaseAuth.getInstance();
         PostsRef = FirebaseDatabase.getInstance().getReference().child("posts");
 
         DisplayAllPosts();
+        addNewPost = (FloatingActionButton)findViewById(R.id.newPost);
+        addNewPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (auth.getCurrentUser() == null){
+                    startActivity(new Intent(MainActivity.this, ProfilePage.class));
+                }
+                startActivity(new Intent(MainActivity.this, NewPost.class));
+
+            }
+        });
 
     }
 
@@ -130,7 +141,4 @@ public class MainActivity extends AppCompatActivity {
             new_phone_number.setText(phone_number);
         }
     }
-
-
-
 }
