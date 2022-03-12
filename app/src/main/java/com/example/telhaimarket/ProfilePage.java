@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfilePage extends AppCompatActivity {
     private TextView welcome;
     private Button login,logout, register,editProfile,creatPost,myPosts;
-    private FirebaseAuth auth;
+    private FirebaseAuth auth;//a
     private boolean loggedIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
