@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -83,15 +84,20 @@ public class ProfileEditPage extends AppCompatActivity {
                 if (TextUtils.isEmpty(txt_password)|| TextUtils.isEmpty(txt_fullname)|| TextUtils.isEmpty(txt_phone_number)){
                     Toast.makeText(ProfileEditPage.this, "Some fields are empty ",Toast.LENGTH_SHORT).show();
                     return;
-                }else if(txt_password.length() < 6 ) {
+                }
+                if(txt_password.length() < 6 ) {
                     Toast.makeText(ProfileEditPage.this, "Password is too short", Toast.LENGTH_SHORT).show();
                     return;
 
                 }
-                else if (!txt_password.equals(txt_passwordVer)){
+                if (!txt_password.equals(txt_passwordVer)){
                     Toast.makeText(ProfileEditPage.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
 
+                }
+                if (txt_phone_number.length() != 10){
+                    Toast.makeText(ProfileEditPage.this, "Phone number is too short", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else {
                     temp.setFullName(txt_fullname);
@@ -103,8 +109,10 @@ public class ProfileEditPage extends AppCompatActivity {
                     temp.setEmail(auth.getCurrentUser().getEmail());
                     temp.setUid(auth.getUid());
                     userRf.child(auth.getUid()).setValue(temp);
+                    FirebaseUser firebaseUser = auth.getCurrentUser();
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(txt_fullname).build();
+                    firebaseUser.updateProfile(profileUpdates);
                     startActivity(new Intent(ProfileEditPage.this, ProfilePage.class));
-//                    finish();
                 }
 
             }
