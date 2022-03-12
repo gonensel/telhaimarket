@@ -1,10 +1,14 @@
 package com.example.telhaimarket;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class User {
     private String email;
     private String uid;
     private String phoneNumber;
     private String fullName;
+    private String keyNode;
 
     public User() {
         //Empty Constructor For Firebase
@@ -52,5 +56,21 @@ public class User {
     public void setUid(String uid)
     {
         this.uid = uid;
+    }
+
+    public String getKeyNode() {
+        return keyNode;
+    }
+
+    public void setKeyNode(String keyNode) {
+        this.keyNode = keyNode;
+    }
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("uid", uid);
+        result.put("email", email);
+        result.put("phoneNumber", phoneNumber);
+        result.put("fullName", fullName);
+        return result;
     }
 }

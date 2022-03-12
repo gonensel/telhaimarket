@@ -22,8 +22,14 @@ import com.example.telhaimarket.databinding.ActivityNewPostBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class NewPost extends AppCompatActivity {
     EditText title, dec, price;
@@ -51,6 +57,7 @@ public class NewPost extends AppCompatActivity {
                 }
                 else {
                     publish(txt_dec, txt_title, txt_price);
+
                 }
             }
         });
@@ -63,8 +70,10 @@ public class NewPost extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         Post post = new Post(dec,title,price,auth.getUid());
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference users = database.getReference("posts"); //users is a node in your Firebase Database.
-        users.push().setValue(post).addOnCompleteListener(NewPost.this, new OnCompleteListener<Void>() {
+        DatabaseReference posts = database.getReference("posts"); //users is a node in your Firebase Database.
+        DatabaseReference rf = posts.push();
+        post.setKeyNode(rf.getKey());
+        rf.setValue(post).addOnCompleteListener(NewPost.this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 Toast.makeText(NewPost.this, "publish new post" , Toast.LENGTH_SHORT).show();
@@ -73,11 +82,33 @@ public class NewPost extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    startActivity(new Intent(NewPost.this, NewPost.class));// TODO go to mainActivity
+                    startActivity(new Intent(NewPost.this, ProfilePage.class));// TODO go to mainActivity
+//                    posts.addValueEventListener(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                            ArrayList <Post> lst= new ArrayList<Post>();
+//                            DataSnapshot dataSnapshot;
+//                            for (DataSnapshot postsnap: snapshot.getChildren()) {
+//
+//                                Post post = postsnap.getValue(Post.class);
+//                                lst.add(post) ;
+//
+//
+//
+//                            }
+//                            System.out.println(lst.get(0).getDescription());
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError error) {
+//
+//                        }
+//                    });
                     finish();
                 }
             }
         });
+
 
     }
 }

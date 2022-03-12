@@ -5,13 +5,16 @@ public class Post {
     private String title;
     private String ownerUid;
     private String price;
+    private String keyNode;
 
     public Post(String description, String title, String price, String ownerUid) {
         this.description = description;
         this.title = title;
         this.price = price;
         this.ownerUid = ownerUid;
+        this.keyNode = "";
     }
+    public Post(){}
 
     public String getDescription() {
         return description;
@@ -39,5 +42,13 @@ public class Post {
 
     public String getOwnerUid() {
         return ownerUid;
+    }
+
+    public String getKeyNode() {
+        return keyNode;
+    }
+
+    public void setKeyNode(String keyNode) {
+        this.keyNode = keyNode;
     }
 }

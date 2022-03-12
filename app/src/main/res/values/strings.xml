@@ -34,7 +34,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="welcome">Welcome, Full_Name</string>
+    <string name="welcome"> </string>
     <string name="edit_profile">edit profile</string>
     <string name="create_post">create post</string>
     <string name="my_posts">my posts</string>
