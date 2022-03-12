@@ -1,11 +1,7 @@
 package com.example.telhaimarket;
 
 public class Post {
-    private String description;
-    private String title;
-    private String ownerUid;
-    private String price;
-    private String keyNode;
+    private String description, title, ownerUid, price, keyNode;
 
     public Post(String description, String title, String price, String ownerUid) {
         this.description = description;
