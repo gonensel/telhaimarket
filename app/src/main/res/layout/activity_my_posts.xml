@@ -6,4 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MyPosts">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_feed_posts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
