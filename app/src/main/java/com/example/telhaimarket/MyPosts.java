@@ -1,7 +1,6 @@
 package com.example.telhaimarket;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -92,7 +91,7 @@ public class MyPosts extends AppCompatActivity {
                         AlertDialog.Builder builder = new AlertDialog.Builder(MyPosts.this);
                         builder.setCancelable(true);
                         builder.setTitle("Do you want to delete that post?");
-                        builder.setMessage("Delete last post");
+                        builder.setMessage("Delete post");
                         builder.setNegativeButton("No!", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -111,9 +110,6 @@ public class MyPosts extends AppCompatActivity {
                                             Post post = postsnap.getValue(Post.class);
                                             if (post.getKeyNode().equals(model.getKeyNode())){
                                                 postsnap.getRef().removeValue();
-                                                Intent intent = new Intent(MyPosts.this, MyPosts.class);
-                                                startActivity(intent);
-                                                finish();
                                                 break;
                                             }
 
