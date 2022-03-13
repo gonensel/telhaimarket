@@ -1,36 +1,22 @@
 package com.example.telhaimarket;
 
-import android.annotation.SuppressLint;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowInsets;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.telhaimarket.databinding.ActivityNewPostBinding;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class NewPost extends AppCompatActivity {
     EditText title, dec, price;
@@ -46,7 +32,6 @@ public class NewPost extends AppCompatActivity {
         dec = (EditText)findViewById(R.id.editDec);
         price = (EditText)findViewById(R.id.price_edit);
         publish = (Button)findViewById(R.id.publish_button);
-
         publish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,25 +70,6 @@ public class NewPost extends AppCompatActivity {
                 }
                 else {
                     startActivity(new Intent(NewPost.this, MainActivity.class));
-//                    posts.addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                            ArrayList <Post> lst= new ArrayList<Post>();
-//                            DataSnapshot dataSnapshot;
-//                            for (DataSnapshot postsnap: snapshot.getChildren()) {
-//
-//                                Post post = postsnap.getValue(Post.class);
-//                                lst.add(post) ;
-//                            }
-//                            System.out.println(lst.get(0).getDescription());
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError error) {
-//
-//                        }
-//                    });
-//                    finish();
                 }
             }
         });
