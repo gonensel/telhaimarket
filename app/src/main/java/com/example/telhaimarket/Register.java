@@ -84,8 +84,6 @@ public class Register extends AppCompatActivity {
                 .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(Register.this, "Create user is succeeded:", Toast.LENGTH_SHORT).show();
-
                         if (!task.isSuccessful()) {
                             Toast.makeText(Register.this, "Authentication failed." + task.getException(),
                                     Toast.LENGTH_SHORT).show();
@@ -95,6 +93,7 @@ public class Register extends AppCompatActivity {
                             FirebaseUser user = auth.getCurrentUser();
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(fullname).build();
                             user.updateProfile(profileUpdates);
+                            Toast.makeText(Register.this, "Create user is succeeded:", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this, MainActivity.class));
                             finish();
                         }
